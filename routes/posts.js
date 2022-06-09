@@ -38,18 +38,20 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
  *                example: quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
  */
 
+
 /**
  * @swagger
  * /posts:
  *   get:
- *     summary: Retrieve a list of JSONPlaceholder posts.
- *     description: Retrieve a list of posts from JSONPlaceholder. Can be used to populate a list of fake posts when prototyping or testing an API.
+ *     summary: fetch blog posts from JSONPlaceholder.
+ *     description: Returns a list of all blog posts from JSONPlaceholder.
  *     responses:
  *       200:
- *         description: A list of posts.
+ *         description: A list of blog posts.
  *         content:
  *           application/json:
- *              $ref: '#/components/schemas/Post'
+ *             schema:
+ *               $ref: '#/components/schemas/Post'
  */
 router.get("/", async (req, res) => {
 	const { data } = await axios({
@@ -67,13 +69,14 @@ router.get("/", async (req, res) => {
  * @swagger
  * /posts:
  *   post:
- *     summary: Create a JSONPlaceholder user.
+ *     summary: Create a JSONPlaceholder blog Post.
  *     responses:
  *       201:
- *         description: Created
+ *         description: Newly created blog post.
  *         content:
  *           application/json:
- *              $ref: '#/components/schemas/Post'
+ *             schema:
+ *               $ref: '#/components/schemas/Post'
 */
 router.post("/", async (req, res) => {
 	const { data } = await axios({
@@ -93,18 +96,18 @@ router.post("/", async (req, res) => {
 * @swagger
 * /posts/{id}:
 *   get:
-*     summary: Retrieve a single JSONPlaceholder user.
-*     description: Retrieve a single JSONPlaceholder user. Can be used to populate a user profile when prototyping or testing an API.
+*     summary: Fetch a blog post from JSONPlaceholder.
+*     description: Returns a blog post object.
 *     parameters:
 *       - in: path
 *         name: id
 *         required: true
-*         description: Numeric ID of the user to retrieve.
+*         description: ID of the blog post to fetch.
 *         schema:
 *           type: integer
 *     responses:
 *       200:
-*         description: A single user.
+*         description: A single blog post.
 *         content:
 *           application/json:
 *              $ref: '#/components/schemas/Post'
@@ -125,18 +128,18 @@ router.get("/:id", async (req, res) => {
 * @swagger
 * /posts/{id}:
 *   put:
-*     summary: Update a single JSONPlaceholder user.
-*     description: Update a single JSONPlaceholder user. 
+*     summary: Update a JSONPlaceholder blog post.
+*     description: Returns an updated blog post. 
 *     parameters:
 *       - in: path
 *         name: id
 *         required: true
-*         description: Numeric ID of the user to update.
+*         description: ID of the blog post to update.
 *         schema:
 *           type: integer
 *     responses:
 *       200:
-*         description: A single user.
+*         description:  Updated blog post.
 *         content:
 *           application/json:
 *              $ref: '#/components/schemas/Post'
@@ -161,18 +164,18 @@ router.put("/:id", async (req, res) => {
 * @swagger
 * /posts/{id}:
 *   delete:
-*     summary: Delete a single JSONPlaceholder user.
-*     description: Delete a single JSONPlaceholder user. 
+*     summary: Delete a JSONPlaceholder blog post.
+*     description: Returns a message for the delete operation. 
 *     parameters:
 *       - in: path
 *         name: id
 *         required: true
-*         description: Numeric ID of the user to delete.
+*         description: ID of the blog post to delete.
 *         schema:
 *           type: integer
 *     responses:
 *       200:
-*         description: A single user.
+*         description: An object with status and message properties.
 *         content:
 *           application/json:
 *              $ref: '#/components/schemas/Post'

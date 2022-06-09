@@ -18,7 +18,7 @@ export default {
 		},
 		servers: [
 			{
-				url: "http://localhost:7000/posts",
+				url: "http://localhost:5000/posts",
 			},
 		],
 	},
