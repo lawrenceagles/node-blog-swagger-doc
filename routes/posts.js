@@ -9,16 +9,33 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
  * components:
  *   schemas:
  *     Post:
- *       type: object
- *       properties:
- *         id:
- *           type: integer
- *           description: The user ID.
- *           example: 0
- *         name:
- *           type: string
- *           description: The user's name.
- *           example: Leanne Graham
+ *      type: object
+ *      properties:
+ *        status:
+ *          type: string
+ *          description: Shows the status of the request
+ *          example: successful
+ *        data:
+ *          type: array
+ *          items:
+ *            type: object
+ *            properties:
+ *              id:
+ *                type: integer
+ *                description: Post ID.
+ *                example: 1
+ *              userid:
+ *                type: integer
+ *                description: Author ID.
+ *                example: 1
+ *              title:
+ *                type: string
+ *                description: Post title.
+ *                example: sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+ *              body:
+ *                type: string
+ *                description: Post body.
+ *                example: quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
  */
 
 /**
