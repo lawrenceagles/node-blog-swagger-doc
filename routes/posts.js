@@ -36,6 +36,43 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
  *                type: string
  *                description: Post body.
  *                example: quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
+ *     postObj:
+ *      type: object
+ *      properties:
+ *        status:
+ *          type: string
+ *          description: Shows the status of the request
+ *          example: successful
+ *        data:
+ *          type: object
+ *          properties:
+ *            id:
+ *              type: integer
+ *              description: Post ID.
+ *              example: 1
+ *            userid:
+ *              type: integer
+ *              description: Author ID.
+ *              example: 1
+ *            title:
+ *              type: string
+ *              description: Post title.
+ *              example: sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+ *            body:
+ *              type: string
+ *              description: Post body.
+ *              example: quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
+ *     Message:
+ *      type: object
+ *      properties:
+ *        status:
+ *          type: string
+ *          description: Shows the status of the request
+ *          example: successful
+ *        message:
+ *          type: string
+ *          description: Delete message
+ *          example: Data deleted!
  */
 
 
@@ -110,7 +147,8 @@ router.post("/", async (req, res) => {
 *         description: A single blog post.
 *         content:
 *           application/json:
-*              $ref: '#/components/schemas/Post'
+*              schema:
+*                $ref: '#/components/schemas/postObj'
 */
 router.get("/:id", async (req, res) => {
 	const userID = req.params.id || '';
@@ -142,7 +180,8 @@ router.get("/:id", async (req, res) => {
 *         description:  Updated blog post.
 *         content:
 *           application/json:
-*              $ref: '#/components/schemas/Post'
+*              schema:
+*                $ref: '#/components/schemas/postObj'
 */
 router.put("/:id", async (req, res) => {
 	const userID = req.params.id || '';
@@ -178,7 +217,8 @@ router.put("/:id", async (req, res) => {
 *         description: An object with status and message properties.
 *         content:
 *           application/json:
-*              $ref: '#/components/schemas/Post'
+*              schema:
+*                $ref: '#/components/schemas/Message'
 */
 router.delete("/:id", async (req, res) => {
 	const userID = req.params.id || '';
