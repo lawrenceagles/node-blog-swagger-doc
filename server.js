@@ -20,8 +20,10 @@ app.use(
 // use body-paser-json
 app.use(bodyParser.json());
 
+// use Posts route
 app.use("/posts", Posts);
 
+// use SwaggerSpec
 app.use(
 	"/api-docs",
 	swaggerUi.serve,

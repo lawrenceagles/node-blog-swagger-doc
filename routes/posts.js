@@ -54,13 +54,13 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
  *               $ref: '#/components/schemas/Post'
  */
 router.get("/", async (req, res) => {
-	const { data } = await axios({
+	const response = await axios({
 		method: 'get',
 		baseURL,
 		url: '/posts',
 	})
-
-	res.send({ status: "Successful", data })
+	console.log("response is", response.data)
+	res.send({ status: "Successful", data: response.data })
 
 });
 
