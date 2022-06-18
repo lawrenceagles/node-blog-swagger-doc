@@ -22,5 +22,5 @@ export default {
 			},
 		],
 	},
-	apis: ["./routes/posts.js"],
+	apis: ["./routes/index.js"],
 };

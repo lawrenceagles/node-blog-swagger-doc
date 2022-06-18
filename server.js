@@ -3,7 +3,7 @@ import express from "express";
 import bodyParser from 'body-parser';
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import Posts from "./routes/posts.js"
+import { Posts } from "./routes/index.js";
 import specOpts from "./specOptions.js"
 
 const port = process.env.PORT || 5000;
