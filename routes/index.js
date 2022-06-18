@@ -58,17 +58,6 @@ import Posts from "./posts.js"
  *              type: string
  *              description: Post body.
  *              example: quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
- *     Message:
- *      type: object
- *      properties:
- *        status:
- *          type: string
- *          description: Shows the status of the request
- *          example: successful
- *        message:
- *          type: string
- *          description: Delete message
- *          example: Data deleted!
  */
 
 /**
@@ -145,7 +134,16 @@ import Posts from "./posts.js"
  *           content:
  *             application/json:
  *                schema:
- *                  $ref: '#/components/schemas/Message'
+ *                 type: object
+ *                 properties:
+ *                   status:
+ *                     type: string
+ *                     description: Shows the status of the request
+ *                     example: successful
+ *                   message:
+ *                     type: string
+ *                     description: Delete message
+ *                     example: Data deleted!
  */
 
 export { Posts }; 
