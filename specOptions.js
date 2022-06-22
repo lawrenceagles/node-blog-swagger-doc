@@ -11,7 +11,7 @@ export default {
 				url: "https://spdx.org/licenses/MIT.html",
 			},
 			contact: {
-				name: "Lawrence Eagles",
+				name: "John Doe",
 				url: "https://jsonplaceholder.typicode.com/",
 				email: "info@email.com",
 			},
